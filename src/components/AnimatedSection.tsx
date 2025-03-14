@@ -16,11 +16,11 @@ export default function AnimatedSection({
 }: AnimatedSectionProps) {
   return (
     <motion.section
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ 
-        duration: 0.6,
+        duration: 0.5,
         ease: "easeOut",
         delay
       }}

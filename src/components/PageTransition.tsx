@@ -9,9 +9,9 @@ interface PageTransitionProps {
 }
 
 const variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 10 },
   enter: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 }
+  exit: { opacity: 0, y: -10 }
 };
 
 export default function PageTransition({ children }: PageTransitionProps) {
@@ -26,10 +26,9 @@ export default function PageTransition({ children }: PageTransitionProps) {
         exit="exit"
         variants={variants}
         transition={{ 
-          type: "spring", 
-          stiffness: 300, 
-          damping: 30,
-          duration: 0.4
+          duration: 0.3,
+          ease: "easeInOut",
+          delayChildren: 0.1
         }}
         className="min-h-screen"
       >

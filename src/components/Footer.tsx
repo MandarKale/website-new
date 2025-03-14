@@ -7,13 +7,13 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-blue-700 text-white">
+    <footer className="bg-gray-800 text-white">
       <div className="container py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
             <h3 className="text-xl font-bold mb-4">Mandar Kale</h3>
-            <p className="text-blue-100 mb-4">
+            <p className="text-gray-300 mb-4">
               Engineering Leader at Intuit | Vibe Coder | Blogger
             </p>
             <div className="flex space-x-4">
@@ -38,17 +38,17 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
-            <p className="text-blue-100 mb-2">Have a question or want to connect?</p>
-            <a href="mailto:mandarakale@gmail.com" className="text-accent-light hover:text-white font-medium">
+            <p className="text-gray-300 mb-2">Have a question or want to connect?</p>
+            <a href="mailto:mandarakale@gmail.com" className="text-accent hover:text-white font-medium">
               mandarakale@gmail.com
             </a>
           </div>
         </div>
         
-        <div className="border-t border-blue-600 mt-12 pt-8 text-center text-blue-200">
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
           <p className="mb-2">© {currentYear} Mandar Kale. All rights reserved.</p>
           <p className="text-sm flex items-center justify-center">
-            <FaCode className="mr-2 text-accent-light" /> This website was generated using only Vibe Coding
+            <FaCode className="mr-2 text-accent" /> This website was generated using only Vibe Coding
           </p>
         </div>
       </div>
@@ -61,7 +61,7 @@ const SocialLink = ({ href, icon, label }: { href: string; icon: React.ReactNode
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-blue-200 hover:text-accent-light transition-colors duration-200"
+    className="text-gray-300 hover:text-accent transition-colors duration-200"
     aria-label={label}
   >
     <span className="w-5 h-5">{icon}</span>
@@ -76,7 +76,7 @@ const FooterLink = ({ href, label, externalLink = false }: { href: string; label
           href={href} 
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-200 hover:text-accent-light transition-colors duration-200"
+          className="text-gray-300 hover:text-accent transition-colors duration-200"
         >
           {label}
         </a>
@@ -88,7 +88,7 @@ const FooterLink = ({ href, label, externalLink = false }: { href: string; label
     <li>
       <Link 
         href={href} 
-        className="text-blue-200 hover:text-accent-light transition-colors duration-200"
+        className="text-gray-300 hover:text-accent transition-colors duration-200"
       >
         {label}
       </Link>

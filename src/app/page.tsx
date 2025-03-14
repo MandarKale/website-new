@@ -99,7 +99,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* About Section */}
-      <AnimatedSection className="section bg-white dark:bg-gray-900" delay={0.1}>
+      <AnimatedSection className="section bg-white dark:bg-gray-800" delay={0.1}>
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
@@ -122,7 +122,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* Medium Blog Posts */}
-      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800" delay={0.2}>
+      <AnimatedSection className="section bg-gray-100 dark:bg-gray-900" delay={0.2}>
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -138,7 +138,7 @@ export default function Home() {
                     href={post.url} 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:text-accent/80 font-medium inline-flex items-center"
+                    className="text-accent hover:text-accent-dark font-medium inline-flex items-center"
                   >
                     Read on Medium <FaArrowRight className="ml-2 h-4 w-4" />
                   </a>
