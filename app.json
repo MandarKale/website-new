@@ -1,0 +1,11 @@
+{
+  "name": "Mandar Kale Personal Website",
+  "description": "A professional personal website built with Next.js and Tailwind CSS",
+  "repository": "https://github.com/MandarKale/website-new",
+  "keywords": ["nodejs", "nextjs", "react", "tailwindcss"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+} 
