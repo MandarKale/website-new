@@ -26,15 +26,15 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white dark:bg-gray-900 shadow-md py-2' 
+          ? 'bg-white dark:bg-blue-800 shadow-md py-2' 
           : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="text-xl font-heading font-bold text-primary dark:text-white">
+        <Link href="/" className="text-xl font-heading font-bold text-blue-700 dark:text-white">
           Mandar Kale
-          <span className="block text-xs text-gray-600 dark:text-gray-400 font-normal mt-0.5">Engineering Leader</span>
+          <span className="block text-xs text-blue-500 dark:text-blue-200 font-normal mt-0.5">Engineering Leader | Vibe Coder</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -50,7 +50,7 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           <svg 
-            className="w-6 h-6 text-gray-700 dark:text-gray-200" 
+            className="w-6 h-6 text-blue-700 dark:text-blue-200" 
             fill="none" 
             strokeLinecap="round" 
             strokeLinejoin="round" 
@@ -69,10 +69,10 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800 shadow-lg">
+        <div className="md:hidden bg-white dark:bg-blue-800 shadow-lg">
           <div className="px-4 py-5 space-y-5">
             <NavLinks mobile />
-            <div className="flex justify-center space-x-6 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-center space-x-6 pt-4 border-t border-blue-100 dark:border-blue-700">
               <SocialLinks />
             </div>
           </div>
@@ -106,7 +106,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-gray-700 hover:text-accent dark:text-gray-200 dark:hover:text-accent font-medium ${
+            className={`text-blue-600 hover:text-accent dark:text-blue-200 dark:hover:text-accent-light font-medium ${
               mobile ? 'text-lg' : ''
             }`}
           >
@@ -116,7 +116,7 @@ const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
           <Link
             key={link.href}
             href={link.href}
-            className={`text-gray-700 hover:text-accent dark:text-gray-200 dark:hover:text-accent font-medium ${
+            className={`text-blue-600 hover:text-accent dark:text-blue-200 dark:hover:text-accent-light font-medium ${
               mobile ? 'text-lg' : ''
             }`}
           >
@@ -143,7 +143,7 @@ const SocialLinks = () => {
           href={link.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 hover:text-accent dark:text-gray-300 dark:hover:text-accent"
+          className="text-blue-500 hover:text-accent dark:text-blue-300 dark:hover:text-accent-light"
           aria-label={link.label}
         >
           <link.icon className="w-5 h-5" />
