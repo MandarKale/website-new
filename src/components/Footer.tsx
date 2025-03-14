@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaCode } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,7 +30,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <FooterLink href="/" label="Home" />
               <FooterLink href="/about" label="About" />
-              <FooterLink href="https://mandarakale.medium.com/" label="Blog" externalLink={true} />
+              <FooterLink href="/experience" label="Experience" />
+              <FooterLink href="/blog" label="Blog" />
             </ul>
           </div>
           
@@ -45,7 +46,10 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>© {currentYear} Mandar Kale. All rights reserved.</p>
+          <p className="mb-2">© {currentYear} Mandar Kale. All rights reserved.</p>
+          <p className="text-sm flex items-center justify-center">
+            <FaCode className="mr-2 text-accent" /> This website was generated using only Vibe Coding
+          </p>
         </div>
       </div>
     </footer>
