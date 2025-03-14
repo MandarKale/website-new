@@ -7,7 +7,6 @@ import { FaArrowRight, FaMedium, FaCalendarAlt, FaClock } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimatedSection from '@/components/AnimatedSection';
-import { motion } from 'framer-motion';
 
 // Medium blog posts data - these would ideally come from an API
 const mediumBlogPosts = [
@@ -115,17 +114,12 @@ export default function Blog() {
       </AnimatedSection>
 
       {/* Blog Content Section */}
-      <AnimatedSection className="section bg-white dark:bg-gray-900" delay={0.1}>
+      <AnimatedSection className="section bg-white dark:bg-gray-900">
         <div className="container">
           {/* Filter Categories */}
-          <motion.div 
-            className="flex flex-wrap justify-center gap-3 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-          >
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((category, index) => (
-              <motion.button
+              <button
                 key={index}
                 className={`px-4 py-2 rounded-full transition-all duration-300 ${
                   filter === category 
@@ -133,75 +127,59 @@ export default function Blog() {
                     : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-accent/30 hover:text-accent-dark dark:hover:text-white'
                 }`}
                 onClick={() => setFilter(category)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 {category}
-              </motion.button>
+              </button>
             ))}
-          </motion.div>
+          </div>
 
           {/* Blog Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
-              <motion.div
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              >
+            {filteredPosts.map((post) => (
+              <div key={post.id}>
                 <BlogPostCard 
                   post={post} 
                   hasImageError={!!imageError[post.id]}
                   onImageError={() => handleImageError(post.id)}
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Empty State */}
           {filteredPosts.length === 0 && (
-            <motion.div 
-              className="text-center py-16"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div className="text-center py-16">
               <h3 className="text-2xl font-bold mb-4">No posts found</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
                 There are no posts in this category yet. Please check back later or choose another category.
               </p>
-              <motion.button 
+              <button 
                 onClick={() => setFilter('All')}
                 className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
               >
                 View All Posts
-              </motion.button>
-            </motion.div>
+              </button>
+            </div>
           )}
         </div>
       </AnimatedSection>
 
       {/* Medium CTA Section */}
-      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800" delay={0.2}>
+      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Follow Me on Medium</h2>
             <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
               For more articles on leadership, engineering management, and building high-performance teams.
             </p>
-            <motion.a 
+            <a 
               href="https://mandarakale.medium.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-primary flex items-center justify-center mx-auto w-fit"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               <FaMedium className="mr-2" /> Follow on Medium
-            </motion.a>
+            </a>
           </div>
         </div>
       </AnimatedSection>
@@ -218,11 +196,7 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
   onImageError: () => void 
 }) {
   return (
-    <motion.div 
-      className="blog-card"
-      whileHover={{ y: -5, boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" }}
-      transition={{ duration: 0.3 }}
-    >
+    <div className="blog-card">
       {/* Blog Post Image */}
       <div className="blog-card-image bg-accent/10">
         {hasImageError ? (
@@ -235,7 +209,7 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 hover:scale-105"
+            className="object-cover"
             onError={onImageError}
           />
         )}
@@ -272,17 +246,15 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
           ))}
         </div>
         
-        <motion.a 
+        <a 
           href={post.url} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-accent hover:text-accent/80 font-medium inline-flex items-center"
-          whileHover={{ x: 5 }}
-          transition={{ duration: 0.2 }}
+          className="text-accent hover:text-accent-dark font-medium inline-flex items-center"
         >
           Read on Medium <FaArrowRight className="ml-2 h-4 w-4" />
-        </motion.a>
+        </a>
       </div>
-    </motion.div>
+    </div>
   );
 } 

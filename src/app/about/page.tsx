@@ -78,7 +78,7 @@ export default function About() {
       </AnimatedSection>
 
       {/* Skills Section */}
-      <AnimatedSection className="section bg-white dark:bg-gray-900" delay={0.1}>
+      <AnimatedSection className="section bg-white dark:bg-gray-800">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center">My Skills</h2>
@@ -104,7 +104,7 @@ export default function About() {
       </AnimatedSection>
 
       {/* Experience Section */}
-      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800" delay={0.2}>
+      <AnimatedSection className="section bg-gray-50 dark:bg-gray-900">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-12">Work Experience</h2>
@@ -125,7 +125,7 @@ export default function About() {
       </AnimatedSection>
 
       {/* CTA Section */}
-      <AnimatedSection className="section bg-accent text-white" delay={0.3}>
+      <AnimatedSection className="section bg-accent text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>

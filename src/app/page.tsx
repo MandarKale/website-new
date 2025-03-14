@@ -80,13 +80,13 @@ export default function Home() {
                 <ProfileImage />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-accent">Mandar Kale</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 animate-slide-in">
+            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
               Engineering Leader | Newly-minted Vibe Coder | Blogger
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/about" className="btn-primary">
                 About Me
               </Link>
@@ -99,7 +99,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* About Section */}
-      <AnimatedSection className="section bg-white dark:bg-gray-800" delay={0.1}>
+      <AnimatedSection className="section bg-white dark:bg-gray-800">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
@@ -122,7 +122,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* Medium Blog Posts */}
-      <AnimatedSection className="section bg-gray-100 dark:bg-gray-900" delay={0.2}>
+      <AnimatedSection className="section bg-gray-100 dark:bg-gray-900">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -160,7 +160,7 @@ export default function Home() {
       </AnimatedSection>
       
       {/* CTA Section */}
-      <AnimatedSection className="section bg-accent text-white" delay={0.3}>
+      <AnimatedSection className="section bg-accent text-white">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
