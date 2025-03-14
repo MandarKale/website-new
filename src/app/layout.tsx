@@ -1,5 +1,27 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import { Inter, Montserrat } from 'next/font/google';
+
+// Import for lazy loading to avoid server/client mismatch with framer-motion
+import dynamic from 'next/dynamic';
+
+// Dynamically import the PageTransition component with no SSR
+const PageTransition = dynamic(() => import('@/components/PageTransition'), {
+  ssr: false,
+});
+
+// Load fonts
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
   title: 'Mandar Kale | Engineering Leader',
@@ -46,9 +68,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-        {children}
+    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+      <body className="min-h-screen bg-blue-50 dark:bg-blue-900 text-gray-900 dark:text-blue-50">
+        <PageTransition>
+          {children}
+        </PageTransition>
       </body>
     </html>
   );

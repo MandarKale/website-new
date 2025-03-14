@@ -6,6 +6,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
+import AnimatedSection from '@/components/AnimatedSection';
 
 // Profile Image component with error handling
 function ProfileImage() {
@@ -70,7 +71,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <AnimatedSection className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex justify-center mb-8">
@@ -95,10 +96,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
       {/* About Section */}
-      <section className="section bg-white dark:bg-gray-900">
+      <AnimatedSection className="section bg-white dark:bg-gray-900" delay={0.1}>
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
@@ -118,10 +119,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
       {/* Medium Blog Posts */}
-      <section className="section bg-gray-50 dark:bg-gray-800">
+      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800" delay={0.2}>
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">Latest Blog Posts</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -156,10 +157,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
       {/* CTA Section */}
-      <section className="section bg-accent text-white">
+      <AnimatedSection className="section bg-accent text-white" delay={0.3}>
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
@@ -171,7 +172,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       
       <Footer />
     </main>
