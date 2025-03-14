@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
     remotePatterns: [
       {
@@ -26,6 +27,8 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  // Add basePath if you're not using a custom domain
+  // basePath: '/website-new',
 };
 
 module.exports = nextConfig; 
