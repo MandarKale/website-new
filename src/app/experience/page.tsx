@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { FaLinkedin, FaBuilding, FaCalendarAlt, FaMapMarkerAlt, FaTools, FaArrowRight } from 'react-icons/fa';
+import { FaLinkedin, FaBuilding, FaCalendarAlt, FaTools, FaArrowRight } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
@@ -10,21 +10,19 @@ interface Experience {
   id: number;
   title: string;
   company: string;
-  location: string;
   duration: string;
   description: string[];
   skills: string[];
 }
 
 export default function Experience() {
-  // Top experiences from LinkedIn
+  // Top experiences from LinkedIn with updated dates
   const experiences: Experience[] = [
     {
       id: 1,
       title: "Engineering Leader",
       company: "Intuit",
-      location: "Mountain View, CA",
-      duration: "Aug 2020 - Present",
+      duration: "Mar 2022 - Present",
       description: [
         "Leading the engineering team responsible for the Intuit ProConnect suite of professional tax preparation products.",
         "Developing and executing technical strategy and roadmap for the professional tax software platform.",
@@ -38,8 +36,7 @@ export default function Experience() {
       id: 2,
       title: "Senior Engineering Manager",
       company: "Intuit",
-      location: "Mountain View, CA",
-      duration: "Oct 2018 - Jul 2020",
+      duration: "Jul 2019 - Feb 2022",
       description: [
         "Managed multiple engineering teams responsible for critical components of the tax preparation platform.",
         "Led the transformation from monolithic architecture to microservices-based architecture.",
@@ -53,8 +50,7 @@ export default function Experience() {
       id: 3,
       title: "Engineering Manager",
       company: "Intuit",
-      location: "Mountain View, CA",
-      duration: "Jan 2017 - Sep 2018",
+      duration: "Apr 2016 - Jun 2019",
       description: [
         "Led a team of software engineers developing tax calculation engine for professional tax software.",
         "Drove the adoption of continuous integration and deployment practices across the team.",
@@ -118,10 +114,6 @@ export default function Experience() {
                       <div className="flex items-center text-gray-700 dark:text-gray-300 mb-1">
                         <FaBuilding className="mr-2" />
                         {exp.company}
-                      </div>
-                      <div className="flex items-center text-gray-600 dark:text-gray-400">
-                        <FaMapMarkerAlt className="mr-2" />
-                        {exp.location}
                       </div>
                     </div>
                     

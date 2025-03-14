@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="text-xl font-heading font-bold text-primary dark:text-white">
           Mandar Kale
-          <span className="block text-xs text-gray-600 dark:text-gray-400 font-normal mt-0.5">Engineering Leader at Intuit</span>
+          <span className="block text-xs text-gray-600 dark:text-gray-400 font-normal mt-0.5">Engineering Leader at Intuit | Vibe Coder</span>
         </Link>
 
         {/* Desktop Navigation */}

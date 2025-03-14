@@ -58,13 +58,17 @@ export default function About() {
               <div className="md:col-span-8">
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
                   Hello! I'm Mandar Kale, an Engineering Leader at Intuit with a passion for building innovative technology solutions. 
-                  With years of experience in the industry, I specialize in leading engineering teams to deliver high-quality 
+                  With over a decade of experience in the industry, I specialize in leading engineering teams to deliver high-quality 
                   products that solve complex business problems.
                 </p>
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                  As a newly-minted Vibe Coder, I enjoy exploring emerging technologies and finding creative ways to solve challenging problems.
+                  I believe in building high-performance teams through authentic leadership, embracing ownership, and staying composed under pressure.
+                </p>
                 <p className="text-lg text-gray-700 dark:text-gray-300">
-                  When I'm not guiding engineering initiatives, you'll find me writing technical articles on Medium, exploring new technologies, 
-                  or mentoring aspiring engineers. I believe in continuous learning and sharing knowledge to elevate 
-                  the entire tech community.
+                  Outside of work, I'm an avid fitness enthusiast who loves trekking in nature and playing competitive badminton. 
+                  These activities not only keep me physically active but also help me maintain mental clarity and balance in my life.
+                  When not outdoors, you'll find me writing technical articles on Medium or mentoring aspiring engineers.
                 </p>
               </div>
             </div>

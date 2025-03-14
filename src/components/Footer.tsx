@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Mandar Kale</h3>
             <p className="text-gray-300 mb-4">
-              Engineering Leader at Intuit | Technology Enthusiast | Blogger
+              Engineering Leader at Intuit | Vibe Coder | Blogger
             </p>
             <div className="flex space-x-4">
               <SocialLink href="https://github.com/MandarKale" icon={<FaGithub />} label="GitHub" />
