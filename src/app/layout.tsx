@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Mandar Kale | Engineering Leader at Intuit',
-  description: 'Personal website of Mandar Kale - Engineering Leader at Intuit, Technology Enthusiast, and Blogger.',
-  keywords: ['Mandar Kale', 'Engineering Leader', 'Intuit', 'Technology Enthusiast', 'Blogger'],
+  title: 'Mandar Kale | Engineering Leader',
+  description: 'Personal website of Mandar Kale - Engineering Leader, Vibe Coder, and Blogger.',
+  keywords: ['Mandar Kale', 'Engineering Leader', 'Intuit', 'Vibe Coder', 'Blogger'],
   metadataBase: new URL('http://localhost:3000'),
   openGraph: {
-    title: 'Mandar Kale | Software Engineer',
-    description: 'Personal website of Mandar Kale - Software Engineer, Blogger, and Technology Enthusiast.',
+    title: 'Mandar Kale | Engineering Leader',
+    description: 'Personal website of Mandar Kale - Engineering Leader, Blogger, and Vibe Coder.',
     url: 'https://mandarkale.com',
     siteName: 'Mandar Kale',
     images: [

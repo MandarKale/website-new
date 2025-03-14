@@ -83,7 +83,7 @@ export default function Home() {
               <span className="text-accent">Mandar Kale</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 animate-slide-in">
-              Engineering Leader at Intuit | Technology Enthusiast | Blogger
+              Engineering Leader | Newly-minted Vibe Coder | Blogger
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-in" style={{ animationDelay: '0.2s' }}>
               <Link href="/about" className="btn-primary">
