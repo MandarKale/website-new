@@ -83,10 +83,18 @@ const Navbar = () => {
 };
 
 const NavLinks = ({ mobile = false }: { mobile?: boolean }) => {
-  const links = [
+  // Added proper type definition with optional external property
+  type NavLink = {
+    href: string;
+    label: string;
+    external?: boolean;
+  };
+
+  const links: NavLink[] = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: 'https://mandarakale.medium.com/', label: 'Blog', external: true },
+    { href: '/experience', label: 'Experience' },
+    { href: '/blog', label: 'Blog' },
   ];
 
   return (

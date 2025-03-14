@@ -16,11 +16,21 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold;
+  }
+
+  /* Improved links */
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  /* Smooth transitions for all elements */
+  * {
+    @apply transition-colors duration-300;
   }
 }
 
@@ -30,15 +40,15 @@
   }
   
   .btn {
-    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200;
+    @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-300 ease-in-out;
   }
   
   .btn-primary {
-    @apply btn bg-accent hover:bg-accent/90 text-white focus:ring-accent;
+    @apply btn bg-accent hover:bg-accent/90 text-white focus:ring-accent transform hover:-translate-y-0.5;
   }
   
   .btn-secondary {
-    @apply btn bg-gray-200 hover:bg-gray-300 text-gray-900 focus:ring-gray-500;
+    @apply btn bg-gray-200 hover:bg-gray-300 text-gray-900 focus:ring-gray-500 transform hover:-translate-y-0.5;
   }
 
   .section {
@@ -46,6 +56,34 @@
   }
 
   .card {
-    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg;
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1;
+  }
+
+  /* Improved section headers */
+  .section-header {
+    @apply text-3xl md:text-4xl font-bold mb-6 text-center relative;
+  }
+  
+  .section-header::after {
+    content: '';
+    @apply block h-1 w-20 bg-accent mx-auto mt-4 rounded-full;
+  }
+
+  /* Blog card specific styles */
+  .blog-card {
+    @apply card h-full flex flex-col;
+  }
+  
+  .blog-card-image {
+    @apply h-48 bg-gray-200 dark:bg-gray-700 relative overflow-hidden;
+  }
+  
+  .blog-card-content {
+    @apply p-6 flex flex-col flex-grow;
+  }
+  
+  /* Experience card styles */
+  .experience-card {
+    @apply card p-6 border-l-4 border-accent;
   }
 } 
