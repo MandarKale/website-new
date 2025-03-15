@@ -3,10 +3,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaArrowRight, FaMedium, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import { FaArrowRight, FaMedium, FaCalendarAlt, FaClock, FaChevronRight } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import AnimatedSection from '@/components/AnimatedSection';
+import BackgroundImage from '@/components/BackgroundImage';
 
 // Medium blog posts data - these would ideally come from an API
 const mediumBlogPosts = [
@@ -102,29 +102,44 @@ export default function Blog() {
       <Navbar />
 
       {/* Hero Section */}
-      <AnimatedSection className="pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">My Blog</h1>
-            <p className="text-xl text-gray-700 dark:text-gray-300">
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <BackgroundImage
+          imgSrc="/images/backgrounds/mountain3.jpg"
+          imgAlt="Mountain trekking landscape"
+          overlay={true}
+          overlayOpacity="bg-black/60"
+          position="center"
+        />
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">My Blog</h1>
+            <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow">
               Thoughts on leadership, engineering management, and building high-performance teams.
             </p>
+            <a 
+              href="https://mandarakale.medium.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-lg font-medium inline-flex items-center transition-colors duration-300 shadow-lg"
+            >
+              <FaMedium className="mr-2 text-xl" /> Follow on Medium
+            </a>
           </div>
         </div>
-      </AnimatedSection>
+      </section>
 
       {/* Blog Content Section */}
-      <AnimatedSection className="section bg-white dark:bg-gray-900">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container">
           {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-16">
             {categories.map((category, index) => (
               <button
                 key={index}
-                className={`px-4 py-2 rounded-full transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-sm ${
                   filter === category 
-                    ? 'bg-accent text-white' 
-                    : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-accent/30 hover:text-accent-dark dark:hover:text-white'
+                    ? 'bg-accent text-white shadow-md' 
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-accent/20 hover:text-accent-dark dark:hover:text-white'
                 }`}
                 onClick={() => setFilter(category)}
               >
@@ -148,41 +163,21 @@ export default function Blog() {
 
           {/* Empty State */}
           {filteredPosts.length === 0 && (
-            <div className="text-center py-16">
+            <div className="text-center py-16 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md">
               <h3 className="text-2xl font-bold mb-4">No posts found</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
                 There are no posts in this category yet. Please check back later or choose another category.
               </p>
               <button 
                 onClick={() => setFilter('All')}
-                className="btn-primary"
+                className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium inline-flex items-center transition-colors duration-300"
               >
                 View All Posts
               </button>
             </div>
           )}
         </div>
-      </AnimatedSection>
-
-      {/* Medium CTA Section */}
-      <AnimatedSection className="section bg-gray-50 dark:bg-gray-800">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Follow Me on Medium</h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-8">
-              For more articles on leadership, engineering management, and building high-performance teams.
-            </p>
-            <a 
-              href="https://mandarakale.medium.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn-primary flex items-center justify-center mx-auto w-fit"
-            >
-              <FaMedium className="mr-2" /> Follow on Medium
-            </a>
-          </div>
-        </div>
-      </AnimatedSection>
+      </section>
 
       <Footer />
     </main>
@@ -196,11 +191,11 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
   onImageError: () => void 
 }) {
   return (
-    <div className="blog-card">
+    <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
       {/* Blog Post Image */}
-      <div className="blog-card-image bg-accent/10">
+      <div className="relative h-60 w-full overflow-hidden">
         {hasImageError ? (
-          <div className="absolute inset-0 flex items-center justify-center text-accent text-xl p-4 text-center">
+          <div className="absolute inset-0 flex items-center justify-center bg-accent/10 text-accent text-xl p-4 text-center">
             {post.title}
           </div>
         ) : (
@@ -209,15 +204,15 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
             alt={post.title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover"
+            className="object-cover hover:scale-105 transition-transform duration-500"
             onError={onImageError}
           />
         )}
       </div>
       
       {/* Blog Post Details */}
-      <div className="blog-card-content">
-        <div className="flex justify-between items-center mb-3 text-sm text-gray-600 dark:text-gray-400">
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-center mb-3 text-sm text-gray-500 dark:text-gray-400">
           <div className="flex items-center">
             <FaCalendarAlt className="mr-1.5" size={12} />
             {post.date}
@@ -228,18 +223,18 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
           </div>
         </div>
         
-        <h3 className="text-xl font-bold mb-3 line-clamp-2 hover:text-accent">{post.title}</h3>
+        <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-accent">{post.title}</h3>
         
-        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">
+        <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 flex-grow">
           {post.excerpt}
         </p>
         
         {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4 mt-auto">
+        <div className="flex flex-wrap gap-2 mb-4">
           {post.tags.map((tag: string, index: number) => (
             <span
               key={index}
-              className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded-md text-xs"
+              className="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-3 py-1 rounded-full text-xs font-medium"
             >
               {tag}
             </span>
@@ -249,10 +244,10 @@ function BlogPostCard({ post, hasImageError, onImageError }: {
         <a 
           href={post.url} 
           target="_blank" 
-          rel="noopener noreferrer"
-          className="text-accent hover:text-accent-dark font-medium inline-flex items-center"
+          rel="noopener noreferrer" 
+          className="inline-flex items-center text-accent hover:text-accent-dark font-medium mt-auto group"
         >
-          Read on Medium <FaArrowRight className="ml-2 h-4 w-4" />
+          Read Article <FaChevronRight className="ml-2 group-hover:ml-3 transition-all duration-300 text-sm" />
         </a>
       </div>
     </div>
