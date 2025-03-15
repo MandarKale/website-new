@@ -76,7 +76,7 @@ export default function About() {
                     I believe in building high-performance teams through authentic leadership, embracing ownership, and staying composed under pressure.
                   </p>
                   <p className="text-lg text-gray-100 leading-relaxed">
-                    Outside of work, I'm an avid <span className="text-accent font-semibold">trekking enthusiast</span> who loves exploring nature and playing competitive badminton. 
+                    Outside of work, I'm an avid <span className="text-accent font-semibold">trekking enthusiast</span> who loves exploring nature and playing badminton. 
                     These activities not only keep me physically active but also help me maintain mental clarity and balance in my life.
                     When not outdoors, you'll find me writing technical articles on Medium or mentoring aspiring engineers.
                   </p>
