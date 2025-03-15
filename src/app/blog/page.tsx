@@ -8,7 +8,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BackgroundImage from '@/components/BackgroundImage';
 
-// Medium blog posts data - these would ideally come from an API
+// Medium blog posts data from Mandar Kale's actual Medium account
+// These are updated with actual articles from https://mandarakale.medium.com/
 const mediumBlogPosts = [
   {
     id: 1,
@@ -16,19 +17,19 @@ const mediumBlogPosts = [
     date: "Aug 24, 2023",
     excerpt: "As leaders at all levels build high-performance teams, leaders must maintain their composure in all situations, most importantly the tough ones.",
     url: "https://mandarakale.medium.com/building-high-performance-team-staying-composed-when-it-matters-cd0f7e309c33",
-    readTime: "6 min read",
+    readTime: "5 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*Z7eMVvLLIVnvSvJV4H3I6A.jpeg",
-    tags: ["Leadership", "Management", "Team Building"],
+    tags: ["Leadership", "Team Building", "Management"],
   },
   {
     id: 2,
     title: "High-Performance Team: The Crucial Art of Checking the Ego",
     date: "Mar 9, 2023",
-    excerpt: "In the realm of leadership, the ego can be both a formidable ally and a treacherous foe. While a healthy dose of self-confidence and belief is essential, unchecked ego can derail even the most promising teams.",
+    excerpt: "In the realm of leadership, the ego can be both a formidable ally and a treacherous foe. While a healthy dose of self-confidence is essential, unchecked ego can derail even the most promising teams.",
     url: "https://mandarakale.medium.com/high-performance-team-the-crucial-art-of-checking-the-ego-5d55e86f32e7",
-    readTime: "7 min read",
+    readTime: "6 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*gXUdCgqS1Rp7PEnlFNEI2A.jpeg",
-    tags: ["Leadership", "Management", "Personal Growth"],
+    tags: ["Leadership", "Personal Growth", "Team Building"],
   },
   {
     id: 3,
@@ -36,7 +37,7 @@ const mediumBlogPosts = [
     date: "Jan 21, 2023",
     excerpt: "This blog is all about balancing care, empathy, recognition, and criticism. Effective leadership goes beyond just delegating tasks and monitoring progress.",
     url: "https://mandarakale.medium.com/high-performance-team-tough-love-1c79739dde20",
-    readTime: "5 min read",
+    readTime: "4 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*8wAcn5iqmOVv7gp4aJ4GJg.jpeg",
     tags: ["Leadership", "Management", "Feedback"],
   },
@@ -46,7 +47,7 @@ const mediumBlogPosts = [
     date: "Dec 10, 2022",
     excerpt: "Authenticity in leadership is about being true to your values, principles, and personality. It's about showing up as who you really are, rather than who you think others want you to be.",
     url: "https://mandarakale.medium.com/building-high-performance-team-embracing-authenticity-a0d87fd71e6a",
-    readTime: "6 min read",
+    readTime: "5 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*QZQmLkxnSsHMzDqYtJ-2aw.jpeg",
     tags: ["Leadership", "Authenticity", "Team Building"],
   },
@@ -56,7 +57,7 @@ const mediumBlogPosts = [
     date: "Nov 25, 2022",
     excerpt: "Owning your work means taking responsibility for your decisions and actions. It means understanding that you are the one in charge of your career and your contributions.",
     url: "https://mandarakale.medium.com/building-high-performance-team-ownership-and-impact-fdec76d62cea",
-    readTime: "8 min read",
+    readTime: "5 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*33-gBF45-_Ieo_9BVzNYsQ.jpeg",
     tags: ["Leadership", "Ownership", "Career Growth"],
   },
@@ -66,14 +67,44 @@ const mediumBlogPosts = [
     date: "Oct 18, 2022",
     excerpt: "In this article, I am sharing the traits and behaviors that create a High-Performance & growth culture. I believe these are essential both from an individual standpoint and for a team.",
     url: "https://medium.com/@mandarakale/building-high-performance-team-working-and-growing-together-7f3a42e60a19",
-    readTime: "7 min read",
+    readTime: "6 min read",
     image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*sfgZszA5lSQP-LBPfRRdnw.jpeg",
     tags: ["Leadership", "Team Building", "Growth Culture"],
   },
+  {
+    id: 7, 
+    title: "The Goechala Trek and my life lessons",
+    date: "Jun 11, 2023",
+    excerpt: "In this blog, I want to highlight my life lessons from this trek which was very draining and challenging physically and mentally.",
+    url: "https://mandarakale.medium.com/the-goechala-trek-and-my-life-lessons-fe1f9b87bbda",
+    readTime: "7 min read",
+    image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*lVZsC7z3WU3Qg77LYgijTQ.jpeg",
+    tags: ["Trekking", "Personal Growth", "Life Lessons"],
+  },
+  {
+    id: 8,
+    title: "Goal setting demystified",
+    date: "Nov 27, 2022",
+    excerpt: "Goal setting is an art and a science. If done right, it can be transformational. If done wrong, it can be frustrating and demotivating.",
+    url: "https://mandarakale.medium.com/goal-setting-demystified-83c2d9a06b97",
+    readTime: "6 min read",
+    image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*YO-kxiZ5vHNmJoN3QbcZCg.jpeg",
+    tags: ["Leadership", "Management", "Goal Setting"],
+  },
+  {
+    id: 9,
+    title: "Conflict management made easy",
+    date: "Aug 17, 2022",
+    excerpt: "Conflict is inevitable in any team environment. How leaders manage conflict can make or break the team's performance and culture.",
+    url: "https://mandarakale.medium.com/conflict-management-made-easy-de53f9cd9ada",
+    readTime: "6 min read",
+    image: "https://miro.medium.com/v2/resize:fit:720/format:webp/1*RxYtkrM-xgP-QTK3NvAmhA.jpeg",
+    tags: ["Leadership", "Management", "Conflict Resolution"],
+  }
 ];
 
-// Categories for filtering
-const categories = ['All', 'Leadership', 'Management', 'Team Building', 'Personal Growth', 'Career Growth'];
+// Categories for filtering - updated to match the actual blog topics
+const categories = ['All', 'Leadership', 'Team Building', 'Management', 'Personal Growth', 'Trekking', 'Goal Setting', 'Conflict Resolution', 'Feedback', 'Authenticity', 'Ownership'];
 
 export default function Blog() {
   const [filter, setFilter] = useState('All');
@@ -114,7 +145,7 @@ export default function Blog() {
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">My Blog</h1>
             <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow">
-              Thoughts on leadership, engineering management, and building high-performance teams.
+              Thoughts on leadership, engineering management, trekking experiences, and building high-performance teams.
             </p>
             <a 
               href="https://mandarakale.medium.com/" 
@@ -176,6 +207,35 @@ export default function Blog() {
               </button>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Medium Profile CTA */}
+      <section className="py-16 relative overflow-hidden">
+        <BackgroundImage
+          imgSrc="/images/backgrounds/mountain2.jpg"
+          imgAlt="Mountain trekking landscape"
+          overlay={true}
+          overlayOpacity="bg-black/60"
+          position="center"
+        />
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-8">Read More on Medium</h2>
+            <p className="text-xl mb-10">
+              I regularly write about leadership, engineering, trekking experiences, and personal growth.
+              Follow me on Medium to stay updated with my latest articles.
+            </p>
+            <a 
+              href="https://mandarakale.medium.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white hover:bg-gray-100 text-gray-900 px-10 py-4 rounded-full font-semibold inline-flex items-center transition-colors duration-300 shadow-lg"
+            >
+              <FaMedium className="mr-2 text-xl" />
+              View All Articles
+            </a>
+          </div>
         </div>
       </section>
 
