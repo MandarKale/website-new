@@ -9,12 +9,6 @@ import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
 import BlogBackground from '@/components/BlogBackground';
 import ExperienceBackground from '@/components/ExperienceBackground';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Blog | Mandar Kale',
-  description: 'Read Mandar Kale\'s latest thoughts and articles on technology, leadership, and engineering.',
-};
 
 // Medium blog posts data from Mandar Kale's actual Medium account
 // These are updated with actual articles from https://mandarakale.medium.com/

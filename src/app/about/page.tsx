@@ -8,12 +8,6 @@ import { useState } from 'react';
 import { FaLinkedin, FaMountain, FaCode, FaUsers, FaLaptopCode } from 'react-icons/fa';
 import Layout from '@/components/Layout';
 import AboutBackground from '@/components/AboutBackground';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'About | Mandar Kale',
-  description: 'Learn more about Mandar Kale\'s background, education, and interests.',
-};
 
 // Profile Image component with error handling
 function ProfileImage() {

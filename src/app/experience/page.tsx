@@ -6,7 +6,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Layout from '@/components/Layout';
 import ExperienceBackground from '@/components/ExperienceBackground';
-import { Metadata } from 'next';
 
 // Define the experience data structure
 interface Experience {
@@ -17,11 +16,6 @@ interface Experience {
   description: string[];
   skills: string[];
 }
-
-export const metadata: Metadata = {
-  title: 'Experience | Mandar Kale',
-  description: 'Explore Mandar Kale\'s professional experience and career journey.',
-};
 
 export default function ExperiencePage() {
   // Top experiences from LinkedIn with updated dates
