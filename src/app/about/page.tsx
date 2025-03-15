@@ -6,7 +6,14 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useState } from 'react';
 import { FaLinkedin, FaMountain, FaCode, FaUsers, FaLaptopCode } from 'react-icons/fa';
-import BackgroundImage from '@/components/BackgroundImage';
+import Layout from '@/components/Layout';
+import AboutBackground from '@/components/AboutBackground';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About | Mandar Kale',
+  description: 'Learn more about Mandar Kale\'s background, education, and interests.',
+};
 
 // Profile Image component with error handling
 function ProfileImage() {
@@ -31,7 +38,7 @@ function ProfileImage() {
   );
 }
 
-export default function About() {
+export default function AboutPage() {
   // Skills data
   const skills = [
     { category: 'Leadership', icon: <FaUsers className="text-accent mb-3 text-3xl" />, items: ['Engineering Management', 'Team Building', 'Product Strategy', 'Agile/Scrum', 'Mentoring', 'Technical Leadership'] },
@@ -41,132 +48,40 @@ export default function About() {
   ];
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <BackgroundImage
-          imgSrc="/images/backgrounds/mountain-about.jpg"
-          imgAlt="Majestic mountain peaks at sunrise"
-          overlay={true}
-          overlayOpacity="bg-black/60"
-          position="center"
-        />
-
-        <div className="container relative z-10 text-white">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 drop-shadow-lg">About Me</h1>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-              <div className="md:col-span-4 flex justify-center">
-                <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-xl bg-accent">
-                  {/* Profile image with fallback to initials */}
-                  <ProfileImage />
-                </div>
-              </div>
-              <div className="md:col-span-8">
-                <div className="bg-gray-900/70 backdrop-blur-sm p-8 rounded-xl shadow-2xl">
-                  <p className="text-lg text-gray-100 mb-6 leading-relaxed">
-                    Hello! I'm <span className="text-accent font-semibold">Mandar Kale</span>, an Engineering Leader at Intuit with a passion for building innovative technology solutions. 
-                    With over a decade of experience in the industry, I specialize in leading engineering teams to deliver high-quality 
-                    products that solve complex business problems.
-                  </p>
-                  <p className="text-lg text-gray-100 mb-6 leading-relaxed">
-                    As a newly-minted <span className="text-accent font-semibold">Vibe Coder</span>, I enjoy exploring emerging technologies and finding creative ways to solve challenging problems.
-                    I believe in building high-performance teams through authentic leadership, embracing ownership, and staying composed under pressure.
-                  </p>
-                  <p className="text-lg text-gray-100 leading-relaxed">
-                    Outside of work, I'm an avid <span className="text-accent font-semibold">trekking enthusiast</span> who loves exploring nature and playing badminton. 
-                    These activities not only keep me physically active but also help me maintain mental clarity and balance in my life.
-                    When not outdoors, you'll find me writing technical articles on Medium or mentoring aspiring engineers.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold mb-16 text-center">My <span className="text-accent">Skills</span></h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {skills.map((skillGroup, index) => (
-                <div key={index} className="card p-8 hover:shadow-lg transition-shadow duration-300 text-center">
-                  <div className="flex justify-center">
-                    {skillGroup.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold mb-6">{skillGroup.category}</h3>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {skillGroup.items.map((skill, i) => (
-                      <span 
-                        key={i} 
-                        className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors duration-300"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-12">Work <span className="text-accent">Experience</span></h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 mb-10">
-              For detailed information about my professional experience, please visit my LinkedIn profile.
+    <Layout>
+      <AboutBackground className="min-h-[50vh] flex items-center justify-center">
+        <div className="container mx-auto px-4 py-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">About Me</h1>
+          <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-lg shadow-lg text-white">
+            <p className="mb-4">
+              I'm a seasoned Software Engineering leader with over 20 years of experience in building and leading high-performing teams. Throughout my career, I've had the privilege of working with talented professionals across various domains, from enterprise applications to cutting-edge web platforms.
             </p>
-            <a 
-              href="https://www.linkedin.com/in/mandar-kale/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center transition-colors duration-300 shadow-md hover:shadow-xl"
-            >
-              <FaLinkedin className="mr-2 h-5 w-5" />
-              View on LinkedIn
-            </a>
-          </div>
-        </div>
-        
-        {/* Decorative element */}
-        <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-accent/10 rounded-full"></div>
-        <div className="absolute -top-16 -left-16 w-64 h-64 bg-accent/10 rounded-full"></div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <BackgroundImage
-          imgSrc="/images/backgrounds/mountain4.jpg"
-          imgAlt="Mountain landscape"
-          overlay={true}
-          overlayOpacity="bg-black/80"
-          position="center"
-        />
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
-            <p className="text-xl mb-10">
-              Want to connect or discuss opportunities? Feel free to reach out to me via email.
+            <p className="mb-4">
+              My journey in technology began with a strong foundation in computer science, which I've continuously built upon through hands-on development, architectural design, and strategic leadership. I'm particularly passionate about leveraging technology to solve complex business problems while fostering a culture of innovation and continuous improvement.
             </p>
-            <a 
-              href="mailto:mandarakale@gmail.com" 
-              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold inline-block transition-colors duration-300 shadow-md hover:shadow-xl"
-            >
-              mandarakale@gmail.com
-            </a>
+            <p className="mb-4">
+              When I'm not immersed in the world of technology, you can find me exploring mountain trails, capturing landscape photographs, or reading about emerging tech trends. I believe in maintaining a balanced approach to life and work, which helps me bring fresh perspectives to challenges.
+            </p>
+            <h2 className="text-2xl font-semibold mt-8 mb-4 text-white">Education</h2>
+            <div className="mb-4">
+              <h3 className="font-semibold text-white">Master of Computer Applications</h3>
+              <p className="text-gray-200">University of Pune - 2001</p>
+            </div>
+            <div className="mb-4">
+              <h3 className="font-semibold text-white">Bachelor of Computer Science</h3>
+              <p className="text-gray-200">University of Pune - 1998</p>
+            </div>
+            <h2 className="text-2xl font-semibold mt-8 mb-4 text-white">Interests</h2>
+            <ul className="list-disc pl-5 text-gray-200">
+              <li className="mb-2">Trekking and hiking</li>
+              <li className="mb-2">Landscape photography</li>
+              <li className="mb-2">Reading technical books and articles</li>
+              <li className="mb-2">Mentoring aspiring engineers</li>
+              <li>Exploring new technologies</li>
+            </ul>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </main>
+      </AboutBackground>
+    </Layout>
   );
 } 

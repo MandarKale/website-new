@@ -6,7 +6,15 @@ import Image from 'next/image';
 import { FaArrowRight, FaMedium, FaCalendarAlt, FaClock, FaChevronRight } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BackgroundImage from '@/components/BackgroundImage';
+import Layout from '@/components/Layout';
+import BlogBackground from '@/components/BlogBackground';
+import ExperienceBackground from '@/components/ExperienceBackground';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Mandar Kale',
+  description: 'Read Mandar Kale\'s latest thoughts and articles on technology, leadership, and engineering.',
+};
 
 // Medium blog posts data from Mandar Kale's actual Medium account
 // These are updated with actual articles from https://mandarakale.medium.com/
@@ -99,118 +107,62 @@ export default function Blog() {
   };
 
   return (
-    <main className="min-h-screen">
-      <Navbar />
-
-      {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <BackgroundImage
-          imgSrc="/images/backgrounds/mountain-blog.jpg"
-          imgAlt="Misty mountain valley at sunrise"
-          overlay={true}
-          overlayOpacity="bg-black/50"
-          position="center"
-        />
-        <div className="container relative z-10">
-          <div className="max-w-3xl mx-auto text-center text-white">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">My Blog</h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 drop-shadow">
-              Thoughts on leadership, engineering management, trekking experiences, and building high-performance teams.
-            </p>
-            <a 
-              href="https://mandarakale.medium.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-lg font-medium inline-flex items-center transition-colors duration-300 shadow-lg"
-            >
-              <FaMedium className="mr-2 text-xl" /> Follow on Medium
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Content Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="container">
-          {/* Filter Categories */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            {categories.map((category, index) => (
-              <button
-                key={index}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-sm ${
-                  filter === category 
-                    ? 'bg-accent text-white shadow-md' 
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-accent/20 hover:text-accent-dark dark:hover:text-white'
-                }`}
-                onClick={() => setFilter(category)}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
-          {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post) => (
-              <div key={post.id}>
-                <BlogPostCard 
-                  post={post} 
-                  hasImageError={!!imageError[post.id]}
-                  onImageError={() => handleImageError(post.id)}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Empty State */}
-          {filteredPosts.length === 0 && (
-            <div className="text-center py-16 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md">
-              <h3 className="text-2xl font-bold mb-4">No posts found</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
-                There are no posts in this category yet. Please check back later or choose another category.
-              </p>
-              <button 
-                onClick={() => setFilter('All')}
-                className="bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium inline-flex items-center transition-colors duration-300"
-              >
-                View All Posts
-              </button>
+    <Layout>
+      <BlogBackground className="min-h-[50vh] flex items-center justify-center">
+        <div className="container mx-auto px-4 py-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-8 text-center">My Blog</h1>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 gap-8">
+              {filteredPosts.map(post => (
+                <div key={post.id} className="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg text-white hover:bg-white/20 transition-all duration-300">
+                  <h2 className="text-2xl font-bold mb-3">
+                    <a href={post.url} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                      {post.title}
+                    </a>
+                  </h2>
+                  <div className="flex items-center mb-4 text-gray-200 text-sm">
+                    <span>{post.date}</span>
+                    <span className="mx-2">•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <p className="mb-4">{post.excerpt}</p>
+                  <a 
+                    href={post.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-white inline-flex items-center"
+                  >
+                    Read more →
+                  </a>
+                </div>
+              ))}
             </div>
-          )}
+          </div>
         </div>
-      </section>
+      </BlogBackground>
 
       {/* Medium Profile CTA */}
-      <section className="py-16 relative overflow-hidden">
-        <BackgroundImage
-          imgSrc="/images/backgrounds/mountain-experience.jpg"
-          imgAlt="Mountain trekking landscape with stunning peaks"
-          overlay={true}
-          overlayOpacity="bg-black/70"
-          position="center"
-        />
-        <div className="container relative z-10">
+      <ExperienceBackground className="py-16">
+        <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h2 className="text-4xl font-bold mb-8">Read More on Medium</h2>
-            <p className="text-xl mb-10">
-              I regularly write about leadership, engineering, trekking experiences, and personal growth.
-              Follow me on Medium to stay updated with my latest articles.
+            <FaMedium className="mx-auto text-5xl mb-6" />
+            <h2 className="text-3xl font-bold mb-4">Follow Me on Medium</h2>
+            <p className="text-xl mb-8">
+              I regularly write about technology, leadership, and engineering challenges.
+              Subscribe to my Medium profile to get notified about new articles.
             </p>
             <a 
-              href="https://mandarakale.medium.com/" 
-              target="_blank"
+              href="https://medium.com/@mandar-kale" 
+              target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white hover:bg-gray-100 text-gray-900 px-10 py-4 rounded-full font-semibold inline-flex items-center transition-colors duration-300 shadow-lg"
+              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold inline-block transition-colors"
             >
-              <FaMedium className="mr-2 text-xl" />
-              View All Articles
+              View My Medium Profile
             </a>
           </div>
         </div>
-      </section>
-
-      <Footer />
-    </main>
+      </ExperienceBackground>
+    </Layout>
   );
 }
 
