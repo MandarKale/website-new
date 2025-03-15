@@ -105,10 +105,10 @@ export default function Blog() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <BackgroundImage
-          imgSrc="/images/backgrounds/mountain3.jpg"
-          imgAlt="Mountain trekking landscape"
+          imgSrc="/images/backgrounds/mountain-blog.jpg"
+          imgAlt="Misty mountain valley at sunrise"
           overlay={true}
-          overlayOpacity="bg-black/60"
+          overlayOpacity="bg-black/50"
           position="center"
         />
         <div className="container relative z-10">
@@ -183,10 +183,10 @@ export default function Blog() {
       {/* Medium Profile CTA */}
       <section className="py-16 relative overflow-hidden">
         <BackgroundImage
-          imgSrc="/images/backgrounds/mountain2.jpg"
-          imgAlt="Mountain trekking landscape"
+          imgSrc="/images/backgrounds/mountain-experience.jpg"
+          imgAlt="Mountain trekking landscape with stunning peaks"
           overlay={true}
-          overlayOpacity="bg-black/60"
+          overlayOpacity="bg-black/70"
           position="center"
         />
         <div className="container relative z-10">

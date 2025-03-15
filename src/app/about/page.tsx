@@ -47,10 +47,10 @@ export default function About() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <BackgroundImage
-          imgSrc="/images/backgrounds/mountain2.jpg"
-          imgAlt="Mountain trekking landscape"
+          imgSrc="/images/backgrounds/mountain-about.jpg"
+          imgAlt="Majestic mountain peaks at sunrise"
           overlay={true}
-          overlayOpacity="bg-black/70"
+          overlayOpacity="bg-black/60"
           position="center"
         />
 

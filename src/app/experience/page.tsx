@@ -70,10 +70,10 @@ export default function Experience() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <BackgroundImage
-          imgSrc="/images/backgrounds/mountain1.jpg"
-          imgAlt="Mountain trekking landscape"
+          imgSrc="/images/backgrounds/mountain-experience.jpg"
+          imgAlt="Mountain trekking landscape with stunning peaks"
           overlay={true}
-          overlayOpacity="bg-black/60"
+          overlayOpacity="bg-black/50"
           position="center"
         />
         <div className="container relative z-10">
