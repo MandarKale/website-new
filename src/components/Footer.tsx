@@ -62,7 +62,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-16 pt-8 text-center text-gray-400">
           <p className="mb-4">© {currentYear} Mandar Kale. All rights reserved.</p>
           <p className="text-sm flex items-center justify-center">
-            <FaCode className="mr-2 text-accent" /> Built with passion using Next.js and Tailwind CSS
+            <FaCode className="mr-2 text-accent" /> This website is completely built using vibe coding.
           </p>
         </div>
       </div>

@@ -80,7 +80,7 @@ export default function Experience() {
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Professional Experience</h1>
             <p className="text-xl md:text-2xl text-gray-100 mb-6 drop-shadow-md">
-              A showcase of my leadership journey and professional growth at Intuit.
+              My leadership journey and professional growth.
             </p>
             <div className="flex justify-center items-center">
               <div className="h-1 w-24 bg-accent rounded-full"></div>
@@ -95,7 +95,7 @@ export default function Experience() {
       <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container max-w-4xl">
           <div className="mb-16 text-center">
-            <h2 className="text-4xl font-bold mb-6">My Journey at <span className="text-accent">Intuit</span></h2>
+            <h2 className="text-4xl font-bold mb-6">My Leadership Journey at <span className="text-accent">Intuit</span></h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Highlighting my professional growth and leadership experiences at Intuit, where I've had the opportunity to drive engineering excellence and build high-performance teams.
             </p>
@@ -192,7 +192,7 @@ export default function Experience() {
           <div className="max-w-3xl mx-auto text-center text-white">
             <h2 className="text-4xl font-bold mb-8">Let's Connect</h2>
             <p className="text-xl mb-10">
-              Interested in learning more about my experience or discussing potential opportunities?
+              Interested in learning more about my experience?
             </p>
             <a 
               href="mailto:mandarakale@gmail.com" 
