@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { FaLinkedin, FaBuilding, FaCalendarAlt, FaTools, FaArrowRight, FaMountain } from 'react-icons/fa';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Layout from '@/components/Layout';
-import ExperienceBackground from '@/components/ExperienceBackground';
+import BackgroundImage from '@/components/BackgroundImage';
 
 // Define the experience data structure
 interface Experience {
@@ -17,7 +16,7 @@ interface Experience {
   skills: string[];
 }
 
-export default function ExperiencePage() {
+export default function Experience() {
   // Top experiences from LinkedIn with updated dates
   const experiences: Experience[] = [
     {
@@ -65,51 +64,147 @@ export default function ExperiencePage() {
   ];
 
   return (
-    <Layout>
-      <ExperienceBackground className="min-h-[60vh] flex items-center justify-center">
-        <div className="container mx-auto px-4 py-24">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">Professional Experience</h1>
-          
-          <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md p-6 md:p-8 rounded-lg shadow-lg text-white">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-2">Engineering Leader</h2>
-              <h3 className="text-xl font-medium mb-2 text-accent">Intuit</h3>
-              <p className="text-gray-200 mb-4">2020 - Present</p>
-              <p className="mb-3">Leading engineering teams to build innovative financial solutions. Responsible for strategic technical direction, team development, and delivery of high-quality products.</p>
-              <ul className="list-disc pl-5 text-gray-200">
-                <li className="mb-2">Led the development of cloud-native applications that improved customer experience</li>
-                <li className="mb-2">Implemented agile methodologies that increased team productivity by 30%</li>
-                <li className="mb-2">Mentored junior engineers, fostering their growth and professional development</li>
-              </ul>
-            </div>
-            
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-2">Senior Software Engineer</h2>
-              <h3 className="text-xl font-medium mb-2 text-accent">Cerner Corporation</h3>
-              <p className="text-gray-200 mb-4">2015 - 2020</p>
-              <p className="mb-3">Developed healthcare technology solutions that improved patient care outcomes. Focused on building reliable, secure, and scalable software.</p>
-              <ul className="list-disc pl-5 text-gray-200">
-                <li className="mb-2">Architected and developed microservices for patient data management</li>
-                <li className="mb-2">Optimized database performance, reducing query times by 40%</li>
-                <li className="mb-2">Collaborated with cross-functional teams to deliver integrated solutions</li>
-              </ul>
-            </div>
-            
-            <div className="text-center mt-12">
-              <p className="text-lg mb-6">For a complete overview of my professional journey:</p>
-              <a 
-                href="https://www.linkedin.com/in/mandar-kale/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-              >
-                <FaLinkedin className="mr-2" />
-                View my LinkedIn Profile
-              </a>
+    <main className="min-h-screen">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <BackgroundImage
+          imgSrc="/images/backgrounds/mountain1.jpg"
+          imgAlt="Mountain trekking landscape"
+          overlay={true}
+          overlayOpacity="bg-black/60"
+          position="center"
+        />
+        <div className="container relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">Professional Experience</h1>
+            <p className="text-xl md:text-2xl text-gray-100 mb-6 drop-shadow-md">
+              A showcase of my leadership journey and professional growth at Intuit.
+            </p>
+            <div className="flex justify-center items-center">
+              <div className="h-1 w-24 bg-accent rounded-full"></div>
+              <FaMountain className="mx-4 text-accent text-xl" />
+              <div className="h-1 w-24 bg-accent rounded-full"></div>
             </div>
           </div>
         </div>
-      </ExperienceBackground>
-    </Layout>
+      </section>
+
+      {/* Experience Timeline Section */}
+      <section className="py-20 bg-white dark:bg-gray-900">
+        <div className="container max-w-4xl">
+          <div className="mb-16 text-center">
+            <h2 className="text-4xl font-bold mb-6">My Journey at <span className="text-accent">Intuit</span></h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Highlighting my professional growth and leadership experiences at Intuit, where I've had the opportunity to drive engineering excellence and build high-performance teams.
+            </p>
+          </div>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-accent/20 rounded-full"></div>
+
+            {/* Experience Cards */}
+            {experiences.map((exp, index) => (
+              <div key={exp.id} className="mb-16 relative">
+                {/* Timeline Dot */}
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -mt-2 w-6 h-6 rounded-full bg-accent shadow-md z-10 flex items-center justify-center">
+                  <div className="w-3 h-3 bg-white rounded-full"></div>
+                </div>
+                
+                {/* Card */}
+                <div className={`md:w-5/12 ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'} ml-8 md:ml-0`}>
+                  <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 border border-gray-100 dark:border-gray-700">
+                    <div className="flex flex-col md:flex-row justify-between mb-4">
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{exp.title}</h3>
+                      <span className="flex items-center text-accent bg-accent/10 px-3 py-1 rounded-full text-sm font-medium mt-2 md:mt-0 w-fit">
+                        <FaCalendarAlt className="mr-1" />
+                        {exp.duration}
+                      </span>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <div className="flex items-center text-gray-700 dark:text-gray-300 mb-1">
+                        <FaBuilding className="mr-2 text-accent" />
+                        <span className="font-medium">{exp.company}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="mb-4">
+                      <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
+                        {exp.description.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="mt-4">
+                      <div className="flex items-center mb-2 text-gray-800 dark:text-gray-200">
+                        <FaTools className="mr-2 text-accent" />
+                        <span className="font-medium">Skills & Technologies</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.skills.map((skill, idx) => (
+                          <span key={idx} className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm font-medium hover:bg-accent hover:text-white transition-colors duration-300">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* LinkedIn CTA */}
+          <div className="mt-16 text-center p-8 bg-gray-50 dark:bg-gray-800 rounded-xl shadow-md">
+            <h3 className="text-2xl font-bold mb-4">Want to know more?</h3>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+              View my complete professional history and connect with me on LinkedIn.
+            </p>
+            <a 
+              href="https://www.linkedin.com/in/mandar-kale/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold inline-flex items-center transition-colors duration-300 shadow-md hover:shadow-xl"
+            >
+              <FaLinkedin className="mr-2 h-5 w-5" />
+              Visit My LinkedIn Profile 
+              <FaArrowRight className="ml-2" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 relative overflow-hidden">
+        <BackgroundImage
+          imgSrc="/images/backgrounds/mountain4.jpg"
+          imgAlt="Mountain landscape"
+          overlay={true}
+          overlayOpacity="bg-black/70"
+          position="center"
+        />
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-8">Let's Connect</h2>
+            <p className="text-xl mb-10">
+              Interested in learning more about my experience or discussing potential opportunities?
+            </p>
+            <a 
+              href="mailto:mandarakale@gmail.com" 
+              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold inline-block transition-colors duration-300 shadow-md hover:shadow-xl"
+            >
+              Contact Me
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
   );
 } 
